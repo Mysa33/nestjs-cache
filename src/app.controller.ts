@@ -22,7 +22,7 @@ export class AppController {
     if(item){
       return item;
     }else{
-      throw new HttpException('Employee not found', HttpStatus.NOT_FOUND);
+      throw new HttpException('Item not found', HttpStatus.NOT_FOUND);
     } 
   }
 }
