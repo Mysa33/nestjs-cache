@@ -37,7 +37,7 @@ async function bootstrap() {
     preflightContinue: false,
     optionsSuccessStatus: 204
   }));
-  app.use(Cache);
+  //app.use(Cache);
   const document = SwaggerModule.createDocument(app, options);
   await SwaggerModule.setup('api', app, document);
   app.use('/static', express.static(__dirname + '/public'));

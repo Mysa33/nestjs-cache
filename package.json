@@ -24,6 +24,8 @@
     "@nestjs/core": "^6.0.0",
     "@nestjs/platform-express": "^6.0.0",
     "@nestjs/swagger": "^3.0.2",
+    "cache-manager": "^2.9.1",
+    "cache-manager-redis-store": "1.5.0",
     "fastify-swagger": "^2.4.0",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
