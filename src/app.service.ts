@@ -11,15 +11,17 @@ export class AppService {
   //Get all
   getByBrand(brand:String):Observable<any> {
     console.log("brand in service :", brand)
-    return this._http.get('http://makeup-api.herokuapp.com/api/v1/products.json' + brand)
+    return this._http.get('http://makeup-api.herokuapp.com/api/v1/products.json?brand=' + brand)
       .pipe(
         map(response => response.data)
       );
   } 
   
-  //Get by poro type
-  getByProdcutType(product_type:String):Observable<object> {
-    return this._http.get('http://makeup-api.herokuapp.com/api/v1/products.json?product_type=' + product_type)
+  //Get by porduct type
+  getByProdcutType(product_type:String):Observable<any> {
+    console.log("type in service :", product_type);
+
+    return this._http.get('http://makeup-api.herokuapp.com/api/v1/products.json?product_type=bronzer')
       .pipe(
         map(response => response.data)
       );
