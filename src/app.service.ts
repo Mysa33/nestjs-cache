@@ -1,4 +1,5 @@
 import { Injectable, HttpModule, HttpService} from '@nestjs/common';
+import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -8,18 +9,19 @@ export class AppService {
   constructor(private _http: HttpService){}
   
   //Get all
-  getItems():Observable<object> {
-    return this._http.get('http://quotesondesign.com/wp-json/posts/2463');
-  }
+  getByBrand(brand:String):Observable<any> {
+    console.log("brand in service :", brand)
+    return this._http.get('http://makeup-api.herokuapp.com/api/v1/products.json' + brand)
+      .pipe(
+        map(response => response.data)
+      );
+  } 
   
-  //Get by limit
-  getByLimit(limit:Number):Observable<object> {
-    return this._http.get('http://quotesondesign.com/wp-json/posts/2463?results=' + limit);
-  }
-
-  //Get by gender
-  getByGender(gender:Number):Observable<object> {
-    return this._http.get('http://quotesondesign.com/wp-json/posts/2463?gender=' + gender);
-  }
-   
+  //Get by poro type
+  getByProdcutType(product_type:String):Observable<object> {
+    return this._http.get('http://makeup-api.herokuapp.com/api/v1/products.json?product_type=' + product_type)
+      .pipe(
+        map(response => response.data)
+      );
+  } 
 }

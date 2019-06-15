@@ -1,7 +1,7 @@
 export interface Item {
     
     readonly id?:number;
-    readonly firstName:string;
-    readonly lastName:string;
+    readonly productName?:string;
+    readonly productPrice?:number;
 
 }
