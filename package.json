@@ -46,7 +46,7 @@
     "ts-node": "^7.0.1",
     "tsconfig-paths": "^3.7.0",
     "class-transformer": "0.2.3",
-    "class-validator": "0.9.1",
+    "class-validator": "0.14.0",
     "reflect-metadata": "0.1.13",
     "tslint": "5.12.1",
     "typescript": "^3.2.4"
